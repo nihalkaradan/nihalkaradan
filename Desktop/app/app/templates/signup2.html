@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="/static/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/grayscale.js">
+    <script type="text/javascript" src="/static/bootstrap.js"></script>
+
+    <title>PentaPoll&copy;</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="{{ url_for('static', filename='map.js') }}"></script>
+    <!-- Theme CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-social.css">
+    <script src="https://use.fontawesome.com/4847269926.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-6" style="padding-top: 150px;">
+                    <h3 style="padding-bottom: 10px;text-transform: uppercase;font-family: 'Oswald', sans-serif;">Login into Account</h3>
+                            <form action= "{{url_for('login')}}" method = 'POST'>
+                                <input name="email" type="email" required="required" placeholder="Email" style="margin-top: 20px;width: 250px;height: 30px;border-radius: 5px;border: 2px;padding-left: 10px;"><br>
+
+                                <input type="text" name="name" required="required" placeholder="Name" style="margin-top: 20px;width: 250px;height: 30px;border-radius: 5px;border: 2px;padding-left: 10px;"/><br>
+                                <input type="submit" name="submit"  value="Login" style="margin-top: 20px;width: 150px;background-color: #008080;color: white;border: 2px solid white;border-radius: 5px;">
+                                <input type=hidden value="{{ next or '' }}" name=next>
+                            </form>
+                                {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                <ul class=flashes>
+                                    {% for message in messages %}
+                                    <li>{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                                {% endwith %}
+                            <script type="text/javascript">window.onpageshow = function(event) {
+                                if (event.persisted) {
+                                window.location.reload() 
+                                }
+                            };</script>
+                        
+                    </div>
+                    <div class="col-lg-6 col-md-6 text-center">
+                            <!--<input type="text" name="username" placeholder="Name" style="margin-top: 20px; width: 250px;height: 30px;border: 2px solid white;padding-left: 4px;border-radius: 5px;"><br>
+                            <input type="text" name="email" placeholder="Email" style="margin-top: 10px; width: 250px;height: 30px;border-radius: 5px;border: 2px solid white;padding-left: 4px;"></br>
+                            <input type="submit" name="loginBtn" value="Login" style="margin-top: 20px;width: 150px;background-color: #008080;color: white;border: 2px solid white;border-radius: 5px;">-->
+                            <img src="/static/img/b.png" width="70%" height="70%">
+                        </br>
+                        <img src="/static/img/c.png" width="60%" height="60%" style="margin-left: 20px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/grayscale.min.js"></script>
+
+</body>
+
+</html>
